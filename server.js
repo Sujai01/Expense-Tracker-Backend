@@ -29,9 +29,13 @@ app.use(express.json()); // Body parser
 
 app.use(cors({
     // Allow BOTH localhost (for testing) and your future Vercel URL
-    origin: ["http://localhost:5173", "https://your-app-name.vercel.app"], 
+    origin: ["http://localhost:5173", "expense-tracker-frontend-red-five.vercel.app"], 
     credentials: true
 }));
+
+app.get("/", (req, res) => {
+    res.send("API is running...");
+});
 
 // 5. Routes
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
