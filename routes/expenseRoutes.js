@@ -5,7 +5,7 @@ const { protect } = require('../middleware/authMiddleware');
 
 // All routes are protected by the auth middleware
 router.post('/add', protect, addExpense);
-router.get('/get', protect, getAllExpenses);
+router.get('/all', protect, getAllExpenses);
 router.delete('/:id', protect, deleteExpense);
 router.get('/download', protect, downloadExpenseExcel);
 
