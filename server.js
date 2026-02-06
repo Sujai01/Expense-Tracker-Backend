@@ -21,9 +21,15 @@ app.use(morgan('dev')); // Logging
 app.use(express.json()); // Body parser
 
 
-// 4. CORS Setup (Crucial for MERN projects)
+// // 4. CORS Setup (Crucial for MERN projects)
+// app.use(cors({
+//     origin: process.env.FRONT_END_URL || 'http://localhost:5173', // Vite default port
+//     credentials: true
+// }));
+
 app.use(cors({
-    origin: process.env.FRONT_END_URL || 'http://localhost:5173', // Vite default port
+    // Allow BOTH localhost (for testing) and your future Vercel URL
+    origin: ["http://localhost:5173", "https://your-app-name.vercel.app"], 
     credentials: true
 }));
 
