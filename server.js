@@ -32,10 +32,11 @@ app.use(express.json());
 app.use(cors({
     origin: [
         "http://localhost:5173", 
-        "https://expense-tracker-frontend-five.vercel.app", // Example Vercel URL
-        /\.vercel\.app$/ // Matches any vercel sub-domain
+        "https://expense-tracker-frontend-gray-eta.vercel.app" // Your new Vercel URL
     ],
-    credentials: true
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
 // 5. Routes
